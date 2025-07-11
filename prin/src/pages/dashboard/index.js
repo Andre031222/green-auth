@@ -1,0 +1,9 @@
+export { default as Inicio } from "./Inicio";
+export { default as Clima } from "./Clima";
+export { default as CultivoInsumos } from "./CultivoInsumos";
+export { default as DeteccionPlagas } from "./DeteccionPlagas";
+export { default as Formacion } from "./Formacion";
+export { default as Asesoria } from "./Asesoria";
+export { default as Prediccion } from "./Prediccion";
+export { default as Comercio } from "./Comercio";
+export { default as Informes } from "./Informes";

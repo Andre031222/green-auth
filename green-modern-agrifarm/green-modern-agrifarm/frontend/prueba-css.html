@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>AgriFarm Test</title>
+    <style>
+        body {
+            background-color: #f0fdf4 !important;
+            font-family: Arial, sans-serif !important;
+            margin: 0 !important;
+            padding: 20px !important;
+        }
+        
+        .header {
+            background: white !important;
+            border: 2px solid #22c55e !important;
+            padding: 20px !important;
+            border-radius: 15px !important;
+            margin-bottom: 20px !important;
+            display: flex !important;
+            justify-content: space-between !important;
+            align-items: center !important;
+        }
+        
+        .logo {
+            font-size: 24px !important;
+            font-weight: bold !important;
+            color: #16a34a !important;
+        }
+        
+        .nav {
+            background: #f3f4f6 !important;
+            padding: 5px !important;
+            border-radius: 25px !important;
+            display: flex !important;
+            gap: 5px !important;
+        }
+        
+        .nav-btn {
+            padding: 10px 20px !important;
+            border-radius: 20px !important;
+            border: none !important;
+            cursor: pointer !important;
+            background: transparent !important;
+            color: #4b5563 !important;
+        }
+        
+        .nav-btn.active {
+            background: #3b82f6 !important;
+            color: white !important;
+        }
+        
+        .title {
+            text-align: center !important;
+            font-size: 36px !important;
+            font-weight: bold !important;
+            color: #111827 !important;
+            margin: 30px 0 !important;
+        }
+        
+        .test-box {
+            background: #22c55e !important;
+            color: white !important;
+            padding: 20px !important;
+            border-radius: 10px !important;
+            text-align: center !important;
+            font-size: 18px !important;
+            margin: 20px 0 !important;
+        }
+    </style>
+</head>
+<body>
+    <div class="test-box">
+        ✅ Si ves esta caja VERDE, el CSS está funcionando
+    </div>
+    
+    <div class="header">
+        <div class="logo">🌱 AgriFarm</div>
+        <div class="nav">
+            <button class="nav-btn active">Inicio</button>
+            <button class="nav-btn">Servicios</button>
+            <button class="nav-btn">Contacto</button>
+        </div>
+    </div>
+    
+    <h1 class="title">¡Bienvenido a AgriFarm!</h1>
+    
+    <div style="background: white; padding: 20px; border-radius: 10px; border: 1px solid #e5e7eb;">
+        <p>Si ves este contenido con estilos aplicados, entonces el CSS funciona correctamente.</p>
+        <p>Si NO ves la caja verde arriba, hay un problema con el CSS.</p>
+    </div>
+    
+    <script>
+        console.log("JavaScript está funcionando");
+        alert("Si ves esta alerta, JavaScript funciona");
+    </script>
+</body>
+</html>

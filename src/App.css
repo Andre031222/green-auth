@@ -1,38 +1,608 @@
-.App {
+/* App.css - Versión Desktop-only */
+
+/* Reset y estilos base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background-color: #f8fafc;
+  color: #1e293b;
+  line-height: 1.6;
+  font-size: 18px;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.highlight {
+  color: #16a34a;
+  font-weight: 600;
+}
+
+/* Header */
+.header {
+  background-color: white;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  padding: 0.5rem 2rem;
+  /* Padding lateral aumentado */
+}
+
+.header-content {
+  display: flex;
+  align-items: center;
+  height: 80px;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  width: 100%;
+}
+
+/* Contenedor del logo */
+.logo {
+  position: absolute;
+  left: 2rem;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+/* Imagen del logo */
+.logo-image {
+  height: 70px;
+  /* Ocupa toda la altura del contenedor */
+  width: auto;
+  max-height: 80px;
+  /* Máximo igual al contenedor */
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+/* Efecto hover opcional */
+.logo-image:hover {
+  transform: scale(1.05);
+  opacity: 0.9;
+}
+
+.logo-text p {
+  font-size: 1.1rem;
+  color: #64748b;
+}
+
+/* Navigation */
+.navigation {
+  display: flex;
+  gap: 3.5rem;
+  margin: 0 auto;
+
+  flex-grow: 1;
+  justify-content: center;
+}
+
+.nav-button {
+  background: none;
+  border: none;
+  padding: 0.8rem 1.5rem;
+  font-family: 'Poppins', sans-serif;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #4b5563;
+  cursor: pointer;
+  position: relative;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+.nav-button:hover {
+  transform: translateY(-3px);
+  text-shadow: 0 2px 4px rgba(22, 163, 74, 0.15);
+}
+
+.nav-button.active {
+  color: #16a34a;
+  font-weight: 600;
+  transform: scale(1.05);
+}
+
+.nav-button.active::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #16a34a;
+  animation: underlineGrow 0.3s ease-out forwards;
+}
+
+.login-button {
+  background-color: #16a34a;
+  color: white;
+  border: none;
+  padding: 0.9rem 2rem;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+
+  margin-left: auto;
+  /* Empuja el botón a la derecha */
+  white-space: nowrap;
+  /* Evita que el texto se parta */
+}
+
+.login-button:hover {
+  background-color: #15803d;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 8px rgba(22, 163, 74, 0.3);
+}
+
+.login-button:active {
+  transform: translateY(0);
+}
+
+
+/* Hero Section */
+.hero-section {
+  padding: 4rem 0;
+}
+
+.hero-title {
+  font-size: 3rem;
+  margin-bottom: 3rem;
   text-align: center;
+  color: #1e293b;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.hero-content {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.hero-text-with-image {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.about-image-container {
+  flex: 1;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  max-width: 500px;
+  /* Limita el ancho máximo */
+  margin-right: 2rem;
+  /* Espacio consistente */
+}
+
+.about-image {
+  width: 100%;
+  height: auto;
+  max-height: 350px;
+  /* Altura máxima controlada */
+  object-fit: cover;
+  /* Asegura buen recorte */
+  display: block;
+  transition: transform 0.3s;
+}
+
+.about-image:hover {
+  transform: scale(1.02);
+}
+
+.hero-text {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.info-box {
+  background-color: white;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.info-box p {
+  font-size: 1.25rem;
+  line-height: 1.8;
+}
+
+.dual-column-container {
+  display: flex;
+  gap: 2rem;
+  margin-top: 1rem;
+}
+
+.green-description-box {
+  flex: 1;
+  background-color: #dcfce7;
+  padding: 2rem;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+}
+
+.green-description-box p {
+  font-size: 1.4rem;
+  /* Tamaño aumentado (antes 1.25rem) */
+  line-height: 1.8;
+  /* Espaciado entre líneas aumentado */
+  color: #166534;
+  font-weight: 500;
+  /* Texto un poco más grueso */
+}
+
+.side-image-container {
+  flex: 1;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  max-width: 450px;
+  /* Ancho controlado */
+  align-self: center;
+  /* Alineación vertical */
+}
+
+.side-image {
+  width: 100%;
+  height: 100%;
+  max-height: 300px;
+  /* Altura reducida */
+  object-fit: cover;
+}
+
+.side-image:hover {
+  transform: scale(1.02);
+}
+
+
+.section-title {
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 3rem;
+  color: #1e293b;
+}
+
+
+
+.feature-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+
+
+.feature-card h4 {
+  font-size: 1.5rem;
+  color: #1e293b;
+  margin-top: 0.5rem;
+}
+
+.feature-card p {
+  color: #64748b;
+  font-size: 1.15rem;
+}
+
+/* Benefits Section */
+.benefits-section {
+  padding: 4rem 0;
+  background-color: #f1f5f9;
+}
+
+.benefits-content {
+  display: flex;
+  gap: 3rem;
+  align-items: flex-start;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.benefits-text {
+  flex: 2;
+}
+
+.benefits-list {
+  margin: 2rem 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.benefit-item {
+  display: flex;
+  align-items: flex-start;
+  font-size: 1.5rem !important;
+  gap: 1rem;
+}
+
+.benefit-bullet {
+  min-width: 12px;
+  min-height: 12px;
+  background-color: #16a34a;
+  border-radius: 50%;
+  margin-top: 0.5rem;
+}
+
+.benefit-item p {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.team-info {
+  background-color: white;
+  padding: 1.5rem;
+  border-radius: 12px;
+  margin-top: 2rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.team-info p {
+  font-size: 1.25rem !important;
+  line-height: 1.7;
+}
+
+.cta-section {
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+
+.cta-card {
+  background-color: white;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  width: 100%;
+}
+
+.cta-icon {
+  background-color: #dcfce7;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.5rem;
+}
+
+.cta-card h4 {
+  font-size: 1.5rem;
+  color: #1e293b;
+  margin-bottom: 1rem;
+}
+
+.cta-card p {
+  color: #64748b;
+  margin-bottom: 2rem;
+  font-size: 1.1rem;
+}
+
+.cta-button {
+  background-color: #16a34a;
+  color: white;
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 6px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  width: 100%;
+}
+
+.cta-button:hover {
+  background-color: #15803d;
+}
+
+/* Footer */
+.footer {
+  background-color: #1e293b;
+  color: white;
+  padding: 2rem 0;
+}
+
+.footer-content {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  gap: 1rem;
+}
+
+.footer-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.footer p {
+  color: #cbd5e1;
+  text-align: center;
+}
+
+/* Contenedor de la imagen */
+.why-image-container {
+  flex: 1;
+  min-width: 500px;
+  /* Tamaño aumentado significativamente */
+  max-width: 550px;
+  align-self: center;
+  margin-left: 4rem;
+  /* Más margen para separación */
+}
+
+/* Estilos para la imagen */
+.why-image {
+  width: 100%;
+  height: auto;
+  max-height: 650px;
+  /* Altura muy generosa */
+  object-fit: contain;
+  border-radius: 18px;
+  /* Bordes más redondeados */
+  box-shadow: 0 25px 35px -10px rgba(0, 0, 0, 0.25);
+  /* Sombra más intensa */
+  border: 5px solid white;
+  /* Marco más grueso */
+  transition: all 0.4s ease;
+}
+
+/* Efecto hover más pronunciado */
+.why-image:hover {
+  transform: scale(1.03);
+  box-shadow: 0 30px 40px -12px rgba(0, 0, 0, 0.3);
+}
+
+/* Ajustes compensatorios para el texto */
+.benefits-text {
+  flex: 2;
+  min-width: 40%;
+  /* Espacio reducido para dar más protagonismo a la imagen */
+  padding-right: 3rem;
+}
+
+/* Contactos */
+.contact-tab {
+  padding: 2rem 0;
+}
+
+.contact-container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.contact-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.contact-header h2 {
+  font-size: 2rem;
+  color: var(--dark-color);
+  margin-bottom: 0.5rem;
+}
+
+.contact-slogan {
+  font-size: 1.1rem;
+  color: var(--gray-color);
+  font-style: italic;
+}
+
+.contact-form {
+  background: white;
+  padding: 2rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  color: var(--dark-color);
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #ddd;
+  border-radius: 0.25rem;
+  font-size: 1rem;
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.submit-button {
+  background-color: #16a34a;
+  /* Verde de tu paleta */
   color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 4px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  margin-top: 1rem;
+  width: auto;
+  /* Cambia de 100% a auto si prefieres */
+  display: block;
+  /* Asegura que ocupe su propia línea */
+  transition: background-color 0.3s;
 }
 
-.App-link {
-  color: #61dafb;
+.submit-button:hover {
+  background-color: #15803d;
+  /* Verde más oscuro al pasar el mouse */
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* Estilos específicos para el fondo de contacto */
+.contact-tab {
+  background-attachment: fixed;
+}
+
+.contact-form {
+  border: 1px solid #a0c4ff;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+}
+
+.form-group input,
+.form-group textarea {
+  background-color: rgba(255, 255, 255, 0.8);
+  border: 1px solid #c9e2ff;
+}
+
+.nav-button-text {
+  display: inline-block;
+  transition: transform 0.3s ease;
+}
+
+.nav-button:hover .nav-button-text {
+  transform: translateX(3px);
+}
+
+.login-button:hover {
+  transform: translateY(-3px) rotateX(10deg);
+  box-shadow: 0 10px 15px -3px rgba(22, 163, 74, 0.3);
+}
+
+.service-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.service-card:hover div {
+  transform: scale(1.1);
+}
+
+.services-cta button:hover {
+  transform: translateY(-2px);
 }

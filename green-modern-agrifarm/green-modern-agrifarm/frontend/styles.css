@@ -1,0 +1,485 @@
+/* AgriFarm - Estilos personalizados */
+
+/* Reset y base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background-color: #fff;
+}
+
+/* Header exacto del diseño */
+.agrifarm-header {
+  background: white;
+  border-bottom: 2px solid #e5e7eb;
+  padding: 16px 0;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.header-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Logo */
+.logo-section {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.logo-image {
+  width: 64px;
+  height: 64px;
+  object-fit: contain;
+}
+
+.logo-fallback {
+  width: 64px;
+  height: 64px;
+  background: linear-gradient(135deg, #22c55e, #16a34a);
+  border-radius: 12px;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 24px;
+}
+
+.logo-text h1 {
+  font-size: 24px;
+  font-weight: bold;
+  color: #16a34a;
+  margin: 0;
+}
+
+.logo-text p {
+  font-size: 14px;
+  color: #6b7280;
+  margin: 0;
+}
+
+/* Navegación con estilo exacto */
+.navigation {
+  display: flex;
+  align-items: center;
+  background: #f3f4f6;
+  padding: 4px;
+  border-radius: 50px;
+  gap: 2px;
+}
+
+.nav-button {
+  padding: 10px 24px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  border: none;
+  cursor: pointer;
+  background: transparent;
+}
+
+.nav-button.active {
+  background: #3b82f6;
+  color: white;
+}
+
+.nav-button:not(.active) {
+  color: #4b5563;
+}
+
+.nav-button:not(.active):hover {
+  background: #e5e7eb;
+}
+
+/* Botón Acceder separado */
+.access-button {
+  background: white;
+  border: 2px solid #d1d5db;
+  color: #4b5563;
+  padding: 10px 24px;
+  border-radius: 50px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-left: 16px;
+}
+
+.access-button:hover {
+  background: #f9fafb;
+  border-color: #9ca3af;
+}
+
+/* Título principal */
+.main-title-section {
+  background: white;
+  padding: 32px 0;
+  text-align: center;
+}
+
+.title-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.main-title {
+  font-size: 48px;
+  font-weight: bold;
+  color: #111827;
+  line-height: 1.2;
+  margin-bottom: 24px;
+}
+
+.main-description {
+  font-size: 18px;
+  color: #374151;
+  line-height: 1.7;
+  max-width: 900px;
+  margin: 0 auto 32px;
+}
+
+/* Carrusel exacto del diseño */
+.carousel-container {
+  max-width: 800px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.carousel-wrapper {
+  height: 320px;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid #e5e7eb;
+  position: relative;
+}
+
+.carousel-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Controles del carrusel */
+.carousel-control {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #3b82f6;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.carousel-control:hover {
+  background: #2563eb;
+}
+
+.carousel-control.prev {
+  left: 16px;
+}
+
+.carousel-control.next {
+  right: 16px;
+}
+
+/* Indicadores de puntos */
+.carousel-dots {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 16px;
+}
+
+.carousel-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.carousel-dot.active {
+  background: #22c55e;
+}
+
+.carousel-dot:not(.active) {
+  background: #d1d5db;
+}
+
+/* Línea divisora verde */
+.green-divider {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.divider-line {
+  border: none;
+  border-top: 2px solid #22c55e;
+  margin: 32px 0;
+}
+
+/* Secciones de contenido */
+.content-section {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px 48px;
+}
+
+.section-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+  align-items: flex-start;
+}
+
+.section-title {
+  font-size: 32px;
+  font-weight: bold;
+  color: #111827;
+  margin-bottom: 16px;
+  font-style: italic;
+}
+
+.section-description {
+  font-size: 16px;
+  color: #374151;
+  line-height: 1.7;
+  margin-bottom: 24px;
+}
+
+.section-image {
+  width: 100%;
+  height: 256px;
+  object-fit: cover;
+  border-radius: 12px;
+  border: 1px solid #e5e7eb;
+}
+
+/* Mini gráfico mundial */
+.world-map-container {
+  position: relative;
+  width: 192px;
+  height: 128px;
+  margin-bottom: 16px;
+}
+
+.world-map {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #dcfce7, #bfdbfe, #dcfce7);
+  border-radius: 12px;
+  position: relative;
+  overflow: hidden;
+}
+
+.continent {
+  position: absolute;
+  background: #22c55e;
+  border-radius: 8px;
+  opacity: 0.7;
+}
+
+.continent-1 {
+  top: 30%;
+  left: 15%;
+  width: 70%;
+  height: 25%;
+}
+
+.continent-2 {
+  top: 55%;
+  left: 25%;
+  width: 50%;
+  height: 30%;
+}
+
+.location-dot {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  background: #dc2626;
+  border-radius: 50%;
+}
+
+.dot-1 { top: 42%; left: 35%; }
+.dot-2 { top: 52%; left: 55%; }
+.dot-3 { top: 58%; left: 75%; }
+
+/* Call to Action */
+.cta-section {
+  background: linear-gradient(135deg, #f0fdf4, #eff6ff);
+  margin: 0 20px 32px;
+  border-radius: 16px;
+  padding: 48px 32px;
+  text-align: center;
+}
+
+.cta-title {
+  font-size: 36px;
+  font-weight: bold;
+  color: #111827;
+  margin-bottom: 16px;
+}
+
+.cta-description {
+  font-size: 18px;
+  color: #374151;
+  margin-bottom: 16px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.cta-subtitle {
+  font-size: 14px;
+  color: #6b7280;
+  margin-bottom: 32px;
+}
+
+.cta-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: center;
+}
+
+.cta-button-primary {
+  background: #16a34a;
+  color: white;
+  padding: 12px 32px;
+  border-radius: 12px;
+  border: none;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.cta-button-primary:hover {
+  background: #15803d;
+}
+
+.cta-button-secondary {
+  background: transparent;
+  color: #16a34a;
+  padding: 12px 32px;
+  border: 2px solid #16a34a;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.cta-button-secondary:hover {
+  background: #f0fdf4;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .header-container {
+    flex-direction: column;
+    gap: 16px;
+  }
+  
+  .navigation {
+    flex-wrap: wrap;
+  }
+  
+  .access-button {
+    margin-left: 0;
+  }
+  
+  .main-title {
+    font-size: 32px;
+  }
+  
+  .main-description {
+    font-size: 16px;
+  }
+  
+  .section-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  
+  .section-title {
+    font-size: 24px;
+  }
+  
+  .cta-buttons {
+    flex-direction: column;
+  }
+  
+  .cta-title {
+    font-size: 28px;
+  }
+}
+
+@media (min-width: 640px) {
+  .cta-buttons {
+    flex-direction: row;
+    justify-content: center;
+  }
+}
+
+/* Animaciones */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.fade-in {
+  animation: fadeIn 0.6s ease-out;
+}
+
+/* Efectos hover */
+.hover-scale {
+  transition: transform 0.3s ease;
+}
+
+.hover-scale:hover {
+  transform: scale(1.02);
+}
+
+/* Utilidades */
+.text-center { text-align: center; }
+.hidden { display: none; }
+.flex { display: flex; }
+.items-center { align-items: center; }
+.justify-center { justify-content: center; }
+.space-x-2 > * + * { margin-left: 8px; }
+.space-y-4 > * + * { margin-top: 16px; }
+.mb-4 { margin-bottom: 16px; }
+.mb-6 { margin-bottom: 24px; }
+.mb-8 { margin-bottom: 32px; }
+.p-4 { padding: 16px; }
+.rounded-lg { border-radius: 12px; }
+.shadow-lg { box-shadow: 0 10px 25px rgba(0,0,0,0.1); }
